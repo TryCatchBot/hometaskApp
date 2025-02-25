@@ -3,15 +3,15 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      [
-        'module-resolver',
-        {
-          root: ['./'],
-          alias: {
-            '@': './',
-          },
+      ['module-resolver', {
+        root: ['.'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        alias: {
+          '@': '.',
+          '@components': './components',
+          '@assets': './assets',
         },
-      ],
+      }],
     ],
   };
 }; 
